@@ -1,0 +1,30 @@
+@import "./assets/sass/reset";
+@import "./assets/sass/mixin";
+
+.App{
+  height: 100vh;
+  position: relative;
+  @include tablet{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @include middleScreen{
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+  @include BigScreen{
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+.light-background{
+  background-color: $light-background;
+}
+.detail{
+  @include tablet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 50px;
+  }
+}

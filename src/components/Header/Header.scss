@@ -1,0 +1,227 @@
+@import "../../assets/sass/color";
+@import "../../assets/sass/mixin";
+header{
+  @include tablet{
+    padding: 2px 0;
+    position: relative;
+  }
+  .title{
+    @include middleScreen{
+      font-size: 30px;
+      margin-bottom: 5px;
+      margin-right: 30px;
+    }
+    @include BigScreen{
+      font-size: 40px;
+    }
+  }
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding:10px;
+  
+    @include tablet{
+      padding:20px 0;
+    }
+    .menu-icon{
+      display: block;
+      cursor: pointer;
+      @include tablet{
+        display: none;
+      }
+    }
+    .sideBar{
+      width: 200px;
+      height: 100vh;
+      background-color:$white-background;
+      position: absolute;
+      top:0;
+      left: 0;
+      z-index: 100;
+      color: black;
+      padding-left: 20px;
+      display: none;
+      @include tablet{
+        width: auto;
+        height: auto;
+        position: relative;
+        padding-left: 0;
+        display: block !important;
+      }
+      .close-icon{
+        margin-top: 20px ;
+        margin-bottom: 40px;
+        cursor: pointer;
+        @include tablet{
+          display: none;
+        }
+      }
+    }
+    .menuItems{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap:20px;
+      
+      div{
+        p:hover{
+          color: $primary-orange;
+        }
+      }
+      @include tablet{
+        flex-direction: row;
+        gap: 0px;
+    
+        div{
+          padding: 15px 10px;
+          border-bottom: 4px solid $white-background;
+          cursor: pointer;
+          @include middleScreen{
+            padding-left: 15px;
+            padding-left: 15px;
+          }
+          @include BigScreen{
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          p{
+            @include middleScreen{
+              font-size: 20px;
+            }
+            @include BigScreen{
+              font-size: 25px;
+            }
+          }
+        }
+        div:hover{
+          border-bottom: 4px solid $primary-orange;
+        }
+      }
+    }
+    .header-item{
+      display: flex;
+      align-items: center;
+      gap:15px;
+      .menu-icon{
+        width: 20px;
+        height: 20px;
+      }
+      .avatar{
+        border-radius: 50%;
+        border: 1px solid $white;
+      }
+      .avatar:hover{
+        border: 1px solid $primary-orange;
+      }
+      .avatar,.chart{
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      @include middleScreen{
+        width: 35px;
+        height: 35px;
+      }
+      @include BigScreen{
+        width: 40px;
+        height: 40px;
+      }
+      }
+      .cart-wrapper{
+        position: relative;
+        p{
+          position: absolute;
+          right: -3px;
+          top:-5px;
+          background-color: $primary-orange;
+          color: $white;
+          width: 15px;
+          text-align: center;
+          padding: 1px 4px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .basket-wrapper{
+    position: absolute;
+    z-index: 90;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color:$white;
+    width: 95%;
+    height: 250px;
+   
+    @include tablet{
+      width: 350px;
+      right: -40px;
+      margin-top: -25px;
+    }
+    .cart-item{
+      padding: 25px;
+      .cart-item-img{
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+      }
+      .cart-item-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .cart-item-container{
+          display: flex;
+          flex-direction:column;
+          gap:10px;
+          p{
+            color:$darkGrayishBlue;
+          }
+          span{
+            font-weight: 700;
+            font-size: 16px;
+            color:$black;
+          }
+        }
+      }
+      button{
+        background-color: $primary-orange;
+        border: none;
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+        color: $white;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.9;
+        }
+      }
+    }
+    .product{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25%;
+      p{
+        color: $darkGrayishBlue;
+        font-weight: 700;
+      }
+    }
+    .basket-title{
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px;
+      border-bottom: 1px solid $grayishBlue;
+    }
+  }
+  .show{
+    display: block !important;
+  }
+  .hidden{
+    display: none !important;
+  }
+}

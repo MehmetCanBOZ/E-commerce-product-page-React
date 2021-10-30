@@ -1,0 +1,21 @@
+.slider-bottomContainer{
+  display: none;
+  width: 400px;
+  margin: 0 auto;
+  @include tablet{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap:20px;
+    div{
+      width: 80px;
+      img{
+        width: 100%;
+        border-radius: 10px;
+        &:hover{
+          opacity:0.4;
+        }
+      }
+    }
+  }
+}

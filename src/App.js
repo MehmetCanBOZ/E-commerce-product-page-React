@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import Header from './components/Header/Header';
+import Slider from 'components/Slider/Slider';
+import ProductDetail from 'components/ProductDetail/ProductDetail';
+import {CartContexProvider} from './context/useCartContext';
+import {ThemeContext, useContext} from './context/useThemeContext';
+import ModalProduct from 'components/ModalProduct/ModalProduct';
 function App() {
+  const {theme} = useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <CartContexProvider>
+        <div className={`App ${theme ? "light-background" : "" }`}>
+          <Header/>
+          {theme && <ModalProduct/>}
+          <div className="detail">
+          <Slider/>
+          <ProductDetail/>
+          </div>
+        </div>
+     </CartContexProvider>
   );
 }
 

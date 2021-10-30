@@ -1,0 +1,167 @@
+@import '../../assets/sass/color';
+@import '../../assets/sass/mixin';
+
+.product-detail{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  @include tablet{
+    width: 400px;
+    margin: 0 auto;
+  }
+  @include middleScreen{
+    width:500px;
+  }
+  @include BigScreen{
+    width:600px;
+  }
+  .company-name,.discount{
+    color:$primary-orange
+  }
+  .company-name{
+    font-size: 13px;
+    font-weight: 700;
+    @include tablet{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    @include middleScreen{
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    @include BigScreen{
+      margin-top: 40px;
+    }
+  }
+  .product-name{
+    font-size: 30px;
+    margin: 10px 0;
+    @include tablet{
+      margin-bottom: 30px;
+    }
+    @include middleScreen{
+      font-size: 40px;
+    }
+    @include BigScreen{
+      font-size: 50px;
+    }
+  }
+  .product-info{
+    line-height: 1.5;
+    color: $darkGrayishBlue;
+    margin: 10px 0;
+    @include middleScreen{
+      font-size: 20px;
+    }
+    @include BigScreen{
+      font-size: 24px;
+    }
+  }
+  .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    @include middleScreen{
+      margin-top: 25px;
+    }
+    @include BigScreen{
+      margin-top: 30px;
+    }
+    .price-info{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:20px;
+      h3{
+        font-size:25px;
+        @include middleScreen{
+          font-size: 30px;
+        }
+        @include BigScreen{
+          font-size: 35px;
+        }
+      }
+    }
+    h4{
+      @include middleScreen{
+        font-size: 20px;
+      }
+      @include BigScreen{
+        font-size: 25px;
+      }
+    }
+    .old-price{
+      color: $grayishBlue;
+      text-decoration: line-through;
+    }
+    .discount{
+      background-color: $primary-paleorange;
+      width: 40px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+  .detail-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+    @include tablet{
+      flex-direction: row;
+    }
+    @include middleScreen{
+      margin-top: 20px;
+    }
+    @include BigScreen{
+      margin-top: 30px;
+    }
+    .cart-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color:$lightGrayishBlue;
+      border-radius: 10px;
+      @include tablet{
+        width:150px;
+      }
+      @include middleScreen{
+        width:200px;
+      }
+      @include BigScreen{
+        width:250px;
+      }
+      
+      button{
+        background-color:$lightGrayishBlue;
+        color: $primary-orange;
+        border: none;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+    .add-cart{
+      background-color: $primary-orange;
+      color: $white;
+      border: none;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 15px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.9;
+      }
+      img{
+        color:$white;
+        margin-right: 20px;
+      }
+    }
+  }
+}
