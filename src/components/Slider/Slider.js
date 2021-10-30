@@ -9,10 +9,10 @@ import { SliderContext } from 'context/useSliderContext';
 import ThumNail from 'components/ThumNail/ThumNail';
 
 const Slider = () => {
-  const { handleNext, handlePrevious, handleHover} = useSlider();
+  const { handleNext, handlePrevious} = useSlider();
   const {sliderdata,sliderIndex} = useContext(SliderContext)
   const {setTheme} = useContext(ThemeContext);
-
+  
   return (
     <div className="slider">
       <div className="slider-upperContainer">

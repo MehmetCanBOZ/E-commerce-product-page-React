@@ -1,14 +1,29 @@
+@import "../../assets/sass/mixin";
+@import "../../assets/sass/color";
 .modal-wrapper{
   left: 50%;
   top:20%;
   transform: translateX(-50%);
-  width: 500px;
-  height: 500px;
-  background-color: white;
+  width: 300px;
+  height: 300px;
   position:absolute;
   z-index: 999;
   cursor: pointer;
   border-radius: 10px;
+
+  @include tablet {
+    width: 400px;
+    height: 400px;
+    display: block;
+  }
+  @include middleScreen{
+    width: 500px;
+    height: 500px;
+  }
+  @include BigScreen{
+    width: 600px;
+    height: 600px;
+  }
   .slider{
     position: relative;
     .close-modal{
@@ -18,6 +33,7 @@
       z-index: 999;
       width: 20px;
       height: 20px;
+      color: $primary-orange;
     }
     .slider-previous,.slider-next{
       display: block;
@@ -25,7 +41,6 @@
         position: relative;
         left: 15px;
         top:10px
-        
       }
       .previousIcon{
         position: relative;
