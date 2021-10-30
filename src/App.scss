@@ -4,6 +4,7 @@
 .App{
   height: 100vh;
   position: relative;
+  background-color: $white;
   @include tablet{
     padding-left: 100px;
     padding-right: 100px;
