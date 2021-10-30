@@ -1,7 +1,15 @@
+@import "../../assets/sass/mixin";
 .slider-bottomContainer{
   display: none;
   width: 400px;
   margin: 0 auto;
+  div{
+    cursor: pointer;
+    
+  }
+  .opacity{
+    opacity: 0.5;
+  }
   @include tablet{
     display: flex;
     justify-content: space-between;
@@ -13,7 +21,7 @@
         width: 100%;
         border-radius: 10px;
         &:hover{
-          opacity:0.4;
+          opacity:0.5;
         }
       }
     }

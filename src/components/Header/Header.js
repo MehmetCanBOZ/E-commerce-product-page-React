@@ -8,34 +8,42 @@ import deleteIcon from '../../assets/img/svg/icon-delete.svg'
 import './Header.scss'
 import { CartContex, useContext } from 'context/useCartContext';
 import { ThemeContext } from 'context/useThemeContext';
-
 const Header = () => {
   const [sideBarIsOpen,setSideBarIsOpen] = useState(false);
   const [chartIsOpen,setchartIsOpen] = useState(false);
   const {itemNumber,setItemNumber} = useContext(CartContex);
-  
+  const {theme,setSideBarTheme} = useContext(ThemeContext)
+  const handleOpenSideBar = () =>{
+    setSideBarIsOpen(true)
+    setSideBarTheme(true)
+  }
+  const handleCloseideBar = () =>{
+    setSideBarIsOpen(false)
+    setSideBarTheme(false)
+  }
   return (
+
     <header>
       <div className="menu">
           <div className="header-item">
-            <img className="menu-icon" src={mobileMenuIcon} alt="menu-icon" onClick={() => setSideBarIsOpen(true)}/>
+            <img className="menu-icon" src={mobileMenuIcon} alt="menu-icon" onClick={handleOpenSideBar}/>
             <h2 className="title">sneakers</h2>
-            <div className={`sideBar ${sideBarIsOpen ?  "show" : "hidden" }` }>
-              <img className="close-icon" src={closeIcon} alt="close" onClick={() => setSideBarIsOpen(false)}/>
+            <div className={`sideBar ${sideBarIsOpen ?  "show" : "hidden" } ${theme ? "light-background" : ""}` }>
+              <img className="close-icon" src={closeIcon} alt="close" onClick={handleCloseideBar}/>
               <div className="menuItems">
-                <div>
+                <div className={`${theme ? "light-background-border" : ""}` }>
                   <p className="menuItem" >Collection</p>
                 </div>
-                <div>
+                <div className={`${theme ? "light-background-border" : ""}` }>
                   <p className="menuItem">Men</p>
                 </div>
-                <div>
+                <div className={`${theme ? "light-background-border" : ""}` }>
                   <p className="menuItem">Women</p>
                 </div>
-                <div>
+                <div className={`${theme ? "light-background-border" : ""}` }>
                   <p className="menuItem">About</p>
                 </div>
-                <div>
+                <div className={`${theme ? "light-background-border" : ""}` }>
                   <p className="menuItem">Contact</p>
                 </div>
               </div>
@@ -60,7 +68,7 @@ const Header = () => {
                         </div>
                         <p>$125.00 x {itemNumber} <span>${(itemNumber*125)}</span></p>
                       </div>
-                      <img src={deleteIcon} alt="delete-icon" onClick={() => setItemNumber(itemNumber - 1)}/>
+                      <img  className = "deletedIcon" src={deleteIcon} alt="delete-icon" onClick={() => setItemNumber(itemNumber - 1)}/>
                     </div>
                     <button>Checkout</button>
                  </div> : 
